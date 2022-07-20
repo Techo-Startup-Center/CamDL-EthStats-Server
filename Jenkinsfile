@@ -11,11 +11,14 @@ pipeline{
         // }
         stage('Deploy Image') {
             steps {
-                docker.withRegistry('https://registry.camdx.gov.kh', 'harbor-credential') {
-                    // // the code here can access $pass and $user
-                    // sh "docker login registry.camdx.gov.kh -u $user -p $pass"
-                    sh "docker push registry.camdx.gov.kh/camdl/ethstat-server:v1.0.1"
+                script {
+                    docker.withRegistry('https://registry.camdx.gov.kh', 'harbor-credential') {
+                        // // the code here can access $pass and $user
+                        // sh "docker login registry.camdx.gov.kh -u $user -p $pass"
+                        sh "docker push registry.camdx.gov.kh/camdl/ethstat-server:v1.0.1"
+                    }
                 }
+                
             }
         }
     }
