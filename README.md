@@ -1,4 +1,4 @@
-Ethereum Network Stats with POA and POW support CamDL
+Ethereum Network Stats with POA and POW support CamDL-Test
 ===============================================
 [![Build Status][travis-image]][travis-url] [![dependency status][dep-image]][dep-url]
 
