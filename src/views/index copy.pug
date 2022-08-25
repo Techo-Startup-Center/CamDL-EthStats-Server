@@ -1,24 +1,15 @@
 //- index.pug
 extends ./layout.pug
-block nav
-  nav(style="background: #00937A; ")
-          a(href="#" style="text-decoration: none; color:white;") 
-            img.img-responsive(width="72", height="72", src="camdl_logo.png", style="display:inline-block;")
-            span.text-light(style="font-size:32px;font-weight:bold; font-family:'Exo'; ") {{$root.pageTitle}}
-          i.icon-laptop(style="font-size:2.5rem;")   
-         
-           
-              
+
 block content
   div.container-fluid(ng-controller='StatsCtrl' style="padding-top: 10px; padding-bottom: 10px;")
    
-        
     div.row(ng-cloak style="padding-top: 10px")
-      //- div.col-xs-12.col-md-12.text-center
-      //-   img(src="camdl_logo.png" height="80px")
-      //-   span.text-light(style="font-size:32px;margin-left:6px;font-weight:bold; font-family:'Exo'") {{$root.pageTitle}}
+      div.col-xs-12.col-md-1.text-gray
+        img(src="camdl_logo.png" height="60px")
+        h3 CamDL EthStats Visualization
 
-      div.col-xs-12.col-md-12
+      div.col-xs-12.col-md-8
         div.row(ng-cloak)
           div.col-xs-6.col-md-2.stat-holder
             div.big-info.bestblock.text-info
@@ -115,47 +106,48 @@ block content
           div.clearfix
 
     div.row(ng-cloak, style="padding-top: 10px")
-      table.table.table-striped.table-responsive
-        thead
-          tr.text-info
-            th.th-nodecheck
-              i.icon-check-o(data-toggle="tooltip", data-placement="top", title="Pin nodes to display first", ng-click="orderTable(['-stats.block.number', 'stats.block.propagation'], false)")
-            th.th-nodename
-              i.icon-node(data-toggle="tooltip", data-placement="top", title="Node name", ng-click="orderTable(['info.name'], false)")
-            th.th-nodetype
-              i.icon-laptop(data-toggle="tooltip", data-placement="top", title="Node type", ng-click="orderTable(['info.node'], false)")
-            th.th-latency
-              i.icon-clock(data-toggle="tooltip", data-placement="top", title="Node latency", ng-click="orderTable(['stats.latency'], false)")
-            //th
-              i.icon-mining(data-toggle="tooltip", data-placement="top", title="Is staking", ng-click="orderTable(['-stats.hashrate'], false)")
+      div.table-responsive
+        table.table.table-striped
+          thead
+            tr.text-info
+              th.th-nodecheck
+                i.icon-check-o(data-toggle="tooltip", data-placement="top", title="Pin nodes to display first", ng-click="orderTable(['-stats.block.number', 'stats.block.propagation'], false)")
+              th.th-nodename
+                i.icon-node(data-toggle="tooltip", data-placement="top", title="Node name", ng-click="orderTable(['info.name'], false)")
+              th.th-nodetype
+                i.icon-laptop(data-toggle="tooltip", data-placement="top", title="Node type", ng-click="orderTable(['info.node'], false)")
+              th.th-latency
+                i.icon-clock(data-toggle="tooltip", data-placement="top", title="Node latency", ng-click="orderTable(['stats.latency'], false)")
+              //th
+                i.icon-mining(data-toggle="tooltip", data-placement="top", title="Is staking", ng-click="orderTable(['-stats.hashrate'], false)")
 
-            th
-              i.icon-group(data-toggle="tooltip", data-placement="top", title="Peers", ng-click="orderTable(['-stats.peers'], false)")
+              th
+                i.icon-group(data-toggle="tooltip", data-placement="top", title="Peers", ng-click="orderTable(['-stats.peers'], false)")
 
-            th
-              i.icon-network(data-toggle="tooltip", data-placement="top", title="Pending transactions", ng-click="orderTable(['-stats.pending'], false)")
-            th
-              i.icon-block(data-toggle="tooltip", data-placement="top", title="Last block", ng-click="orderTable(['-stats.block.number', 'stats.block.propagation'], false)")
-            th.th-blockhash &nbsp;
-            //th.th-blockhash
-              i.icon-difficulty(data-toggle="tooltip", data-placement="top", title="Total difficulty", ng-click="orderTable(['-stats.block.totalDifficulty'], false)")
+              th
+                i.icon-network(data-toggle="tooltip", data-placement="top", title="Pending transactions", ng-click="orderTable(['-stats.pending'], false)")
+              th
+                i.icon-block(data-toggle="tooltip", data-placement="top", title="Last block", ng-click="orderTable(['-stats.block.number', 'stats.block.propagation'], false)")
+              th.th-blockhash &nbsp;
+              //th.th-blockhash
+                i.icon-difficulty(data-toggle="tooltip", data-placement="top", title="Total difficulty", ng-click="orderTable(['-stats.block.totalDifficulty'], false)")
 
-            th
-              i.icon-check-o(data-toggle="tooltip", data-placement="top", title="Block transactions", ng-click="orderTable(['-stats.block.transactions.length'], false)")
+              th
+                i.icon-check-o(data-toggle="tooltip", data-placement="top", title="Block transactions", ng-click="orderTable(['-stats.block.transactions.length'], false)")
 
-            //th
-              i.icon-uncle(data-toggle="tooltip", data-placement="top", title="Uncles", ng-click="orderTable(['-stats.block.uncles.length'], false)")
+              //th
+                i.icon-uncle(data-toggle="tooltip", data-placement="top", title="Uncles", ng-click="orderTable(['-stats.block.uncles.length'], false)")
 
-            th.th-blocktime
-              i.icon-time(data-toggle="tooltip", data-placement="top", title="Last block time", ng-click="orderTable(['-stats.block.received'], false)")
-            th.th-peerPropagationTime
-              i.icon-gas(data-toggle="tooltip", data-placement="top", title="Propagation time", ng-click="orderTable(['-stats.block.number', 'stats.block.propagation'], false)")
-            th.th-peerPropagationChart
-            th.th-peerPropagationAvg
-              i.icon-gas(data-toggle="tooltip", data-placement="top", title="Average propagation time", ng-click="orderTable(['stats.propagationAvg'], false)")
-            th
-              i.icon-bulb(data-toggle="tooltip", data-placement="top", title="Up-time", ng-click="orderTable(['-stats.uptime'], false)")
-        tbody(ng-cloak)
+              th.th-blocktime
+                i.icon-time(data-toggle="tooltip", data-placement="top", title="Last block time", ng-click="orderTable(['-stats.block.received'], false)")
+              th.th-peerPropagationTime
+                i.icon-gas(data-toggle="tooltip", data-placement="top", title="Propagation time", ng-click="orderTable(['-stats.block.number', 'stats.block.propagation'], false)")
+              th.th-peerPropagationChart
+              th.th-peerPropagationAvg
+                i.icon-gas(data-toggle="tooltip", data-placement="top", title="Average propagation time", ng-click="orderTable(['stats.propagationAvg'], false)")
+              th
+                i.icon-bulb(data-toggle="tooltip", data-placement="top", title="Up-time", ng-click="orderTable(['-stats.uptime'], false)")
+          tbody(ng-cloak)
           tr(ng-repeat='node in nodes | orderBy:predicate track by node.id', class="{{ node.stats | mainClass : bestBlock }}", id="node_{{node.id}}")
             td.td-nodecheck
               i(ng-click="pinNode(node.id)", class="{{ node.pinned | nodePinClass }}", data-toggle="tooltip", data-placement="right", data-original-title="Click to {{ node.pinned ? 'un' : '' }}pin")

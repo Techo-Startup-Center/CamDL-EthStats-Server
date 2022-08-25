@@ -6,9 +6,18 @@ html(ng-app="netStatsApp")
     title {{ $root.networkName }} Network Status
     style(type="text/css") [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak { display: none !important; }
     link(rel='stylesheet', href='/css/netstats.min.css')
+    link(rel='stylesheet', type='text/css', href='/css/custom.css')
     meta(name='robots', content='index,follow')
     meta(name='googlebot', content='index,follow')
     link(rel='shortcut icon', type="image/x-icon", href="{{$root.faviconPath}}")
-  body
+    script(src="/js/netstats.min.js")
+  body.d-flex.flex-column(style="font-family: 'Exo'; ")
+    block nav 
+    script(src="/js/netstats.min.js")
     block content
     script(src="/js/netstats.min.js")
+  footer
+    
+    <div class="text-center" style="position:fixed; bottom:0; width:100%; background-color:#CEF3EA;">
+      <p style="color:#00937A !important;"><b>Copyright © {{ $root.currentYear }} by <span><a href="https://camdl.gov.kh" target="_blank">CamDL</a></span>.All Rights Reserved.</b></p>
+    </div>

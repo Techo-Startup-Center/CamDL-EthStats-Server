@@ -4,45 +4,45 @@ html {
 
 body {
 	width: 100%;
-	min-width: 1900px;
+	/* min-width: 1900px; */
 	font-smooth: auto;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
 
 @font-face {
-  font-family: 'Source Sans Pro';
-  font-style: normal;
-  font-weight: 200;
-  src: local('Source Sans Pro ExtraLight'), local('SourceSansPro-ExtraLight'), url(../fonts/SourceSansPro-ExtraLight.woff2) format('woff2');
+	font-family: 'Source Sans Pro';
+	font-style: normal;
+	font-weight: 200;
+	src: local('Source Sans Pro ExtraLight'), local('SourceSansPro-ExtraLight'), url(../fonts/SourceSansPro-ExtraLight.woff2) format('woff2');
 }
 
 @font-face {
-  font-family: 'Source Sans Pro';
-  font-style: normal;
-  font-weight: 300;
-  src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url(../fonts/SourceSansPro-Light.woff2) format('woff2');
+	font-family: 'Source Sans Pro';
+	font-style: normal;
+	font-weight: 300;
+	src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url(../fonts/SourceSansPro-Light.woff2) format('woff2');
 }
 
 @font-face {
-  font-family: 'Source Sans Pro';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(../fonts/SourceSansPro-Regular.woff2) format('woff2');
+	font-family: 'Source Sans Pro';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(../fonts/SourceSansPro-Regular.woff2) format('woff2');
 }
 
 @font-face {
-  font-family: 'Source Sans Pro';
-  font-style: normal;
-  font-weight: 600;
-  src: local('Source Sans Pro SemiBold'), local('SourceSansPro-SemiBold'), url(../fonts/SourceSansPro-SemiBold.woff2) format('woff2');
+	font-family: 'Source Sans Pro';
+	font-style: normal;
+	font-weight: 600;
+	src: local('Source Sans Pro SemiBold'), local('SourceSansPro-SemiBold'), url(../fonts/SourceSansPro-SemiBold.woff2) format('woff2');
 }
 
 @font-face {
-  font-family: 'Source Sans Pro';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(../fonts/SourceSansPro-Bold.woff2) format('woff2');
+	font-family: 'Source Sans Pro';
+	font-style: normal;
+	font-weight: 700;
+	src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(../fonts/SourceSansPro-Bold.woff2) format('woff2');
 }
 
 table td {
@@ -121,7 +121,7 @@ table td {
 
 .stat-holder {
 	background: #090909;
-	border: 1px solid rgba(255,255,255,0.05);
+	border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .big-info {
@@ -195,8 +195,7 @@ span.small-title span.small {
 
 .big-info.chart {
 	height: 120px;
-	-webkit-box-sizing: border-box
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box box-sizing: border-box;
 }
 
 .big-info.chart.double-chart {
@@ -284,6 +283,7 @@ span.small-title span.small {
 .second-row .box .small-value {
 	float: right;
 }
+
 .big-info .small-value {
 	position: absolute;
 	right: 14px;
@@ -312,14 +312,17 @@ table th i {
 	line-height: 1em;
 	font-size: 20px;
 }
+
 table td i {
 	position: relative;
 	top: 2px;
 	left: 2px;
 }
+
 table td.peerPropagationChart {
 	padding: 4px 5px !important;
 }
+
 nodepropagchart {
 	display: inline-block;
 	width: 107px;
@@ -389,7 +392,7 @@ nodepropagchart {
 	overflow: hidden;
 }
 
-#mapHolder > svg {
+#mapHolder>svg {
 	right: 0;
 	bottom: 0;
 	width: 100%;
@@ -493,9 +496,10 @@ svg .bar text {
 svg .axis path,
 svg .axis line {
 	fill: none;
-	stroke: rgba(255,255,255,0.15);
+	stroke: rgba(255, 255, 255, 0.15);
 	shape-rendering: crispEdges;
 }
+
 svg .axis text {
 	fill: #777;
 	font-size: 10px;
@@ -541,13 +545,15 @@ svg .y.axis .tick:first-child text {
 		width: 100%;
 	}
 
-	.big-info.chart i, .second-row .box i {
+	.big-info.chart i,
+	.second-row .box i {
 		font-size: 18px;
 		margin-right: 0px;
 	}
 
 	.second-row .box {
-		height: 100%; /* BUG XXX */
+		height: 100%;
+		/* BUG XXX */
 	}
 }
 

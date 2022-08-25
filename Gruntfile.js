@@ -30,7 +30,7 @@ var styles = [
 	'style.css'
 ];
 
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 	scripts.unshift(grunt.option('configPath') || 'src/js/defaultConfig.js');
 
 	grunt.initConfig({
@@ -55,7 +55,7 @@ module.exports = function(grunt) {
 			build_pow: {
 				options: {
 					data: {
-						debug: false,
+						debug: true,
 						pretty: true
 					}
 				},
@@ -148,7 +148,7 @@ module.exports = function(grunt) {
 				src: vendor,
 				dest: 'dist/js/vendor.min.js'
 			},
-			scripts : {
+			scripts: {
 				options: {
 					separator: ';\n',
 				},
@@ -180,7 +180,18 @@ module.exports = function(grunt) {
 				dest: 'dist/js/app.min.js',
 				src: ['<%= concat.scripts.dest %>']
 			}
-		}
+		},
+		watch: {
+
+			css: {
+				files: '**/*.css',
+				tasks: ['clean:css'],
+				options: {
+					livereload: true,
+				},
+			},
+
+		},
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-clean');
@@ -189,8 +200,10 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-pug');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-pug');
 
 	grunt.registerTask('default', ['clean:build', 'clean:js', 'clean:css', 'pug:build', 'copy:build', 'cssmin:build', 'concat:vendor', 'concat:scripts', 'uglify:app', 'concat:netstats', 'concat:css', 'clean:js', 'clean:css']);
 	grunt.registerTask('pow', ['clean:build', 'clean:js', 'clean:css', 'pug:build_pow', 'copy:build_pow', 'cssmin:build', 'concat:vendor', 'concat:scripts', 'uglify:app', 'concat:netstats', 'concat:css', 'clean:js', 'clean:css']);
-	grunt.registerTask('poa',   'default');
+	grunt.registerTask('poa', 'default');
 };

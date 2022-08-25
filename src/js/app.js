@@ -4,9 +4,11 @@
 
 var netStatsApp = angular.module('netStatsApp', ['netStatsApp.filters', 'netStatsApp.directives', 'ngStorage']);
 
-netStatsApp.run(function($rootScope) {
+netStatsApp.run(function ($rootScope) {
 	$rootScope.networkName = networkName || 'Ethereum';
 	$rootScope.faviconPath = faviconPath || '/favicon.ico';
+	$rootScope.pageTitle = pageTitle || 'CamDL NetStats';
+	$rootScope.currentYear = new Date().getFullYear();
 });
 
 
@@ -43,3 +45,4 @@ netStatsApp.factory('_', function ($rootScope) {
 	var lodash = window._;
 	return lodash;
 });
+
