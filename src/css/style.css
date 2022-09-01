@@ -130,6 +130,7 @@ table td {
 	/* background: rgb(0, 147, 122, 1); */
 	/*background:lightgray;*/
 	border: 1px solid rgba(255, 255, 255, 0.5);
+	font-size: 0.5rem !important;
 }
 
 .big-info {
@@ -175,9 +176,9 @@ span.small-title span.small {
 .big-info .big-details {
 	display: block;
 	font-weight: 200;
-	font-size: 50px;
+	font-size: 2.25rem;
 	line-height: 55px;
-	letter-spacing: -4px;
+	/* letter-spacing: -4px; */
 	word-spacing: nowrap !important;
 }
 
@@ -224,7 +225,7 @@ span.small-title span.small {
 }
 
 .blocks-holder div.small-title-miner {
-	font-family: "Lucida Console", "Courier New", Courier, monospace;
+	font-family: "Exo", Courier, monospace;
 	font-size: 11px;
 	letter-spacing: -0.1px;
 	text-transform: none;

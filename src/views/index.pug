@@ -59,7 +59,8 @@ block content
                 i.icon-difficulty
               div.big-details-holder
                 span.small-title gas limit
-                span.big-details {{ bestStats.block.gasLimit }} gas
+                span.big-details {{ gasLimit }} gas
+                
               div.clearfix
           div.col-xs-6.col-md-2.stat-holder
             div.big-info.active-nodes(class="{{ nodesActive | nodesActiveClass : nodesTotal }}")

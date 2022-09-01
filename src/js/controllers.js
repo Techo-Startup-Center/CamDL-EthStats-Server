@@ -49,6 +49,7 @@ netStatsApp.controller('StatsCtrl', function ($scope, $filter, $localStorage, so
 	// Page title text
 	// $scope.pageTitle = "CamDL NetStats";
 	$scope.currentYear = new Date().getFullYear();
+	$scope.gasLimit = 0;
 
 	$scope.orderTable = function (predicate, reverse) {
 		if (!_.isEqual(predicate, $scope.originalPredicate)) {
@@ -314,6 +315,8 @@ netStatsApp.controller('StatsCtrl', function ($scope, $filter, $localStorage, so
 
 				if (!_.isEqual($scope.lastGasLimit, data.gasLimit) && data.gasLimit.length >= MAX_BINS)
 					$scope.lastGasLimit = data.gasLimit;
+
+
 				if (!_.isEqual($scope.lastBlocksTime, data.blocktime) && data.blocktime.length >= MAX_BINS)
 					$scope.lastBlocksTime = data.blocktime;
 
@@ -530,6 +533,7 @@ netStatsApp.controller('StatsCtrl', function ($scope, $filter, $localStorage, so
 
 				$scope.lastBlock = $scope.bestStats.block.arrived;
 				$scope.lastDifficulty = $scope.bestStats.block.difficulty;
+				$scope.gasLimit = hexToDecimal($scope.bestStats.block.gasLimit);
 			}
 		}
 	}
@@ -608,5 +612,11 @@ netStatsApp.controller('StatsCtrl', function ($scope, $filter, $localStorage, so
 			return obj.replace(/\< *\/* *script *>*/gi, '').replace(/javascript/gi, '');
 		} else
 			return obj;
+	}
+
+	function hexToDecimal(hex) {
+		let nf = new Intl.NumberFormat('en-US');
+
+		return nf.format(parseInt(hex, 16))
 	}
 });

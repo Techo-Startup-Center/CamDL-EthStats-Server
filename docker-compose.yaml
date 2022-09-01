@@ -14,4 +14,4 @@ services:
     volumes:
       - ./:/netstats-server
     # Overrides default command so things don't shut down after the process ends.
-    command: /bin/sh -c "grunt && WS_SECRET="asdf" npm start"
+    command: /bin/sh -c "grunt && WS_SECRET="4Qfj80ZXtfAhHjyEqN1Aoq7MvMZnSnwlr0SCScp4zqXvqynrmXoN7WeQyyYXgY" npm start"
