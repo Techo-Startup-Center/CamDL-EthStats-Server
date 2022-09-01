@@ -314,7 +314,6 @@ netStatsApp.controller('StatsCtrl', function ($scope, $filter, $localStorage, so
 
 				if (!_.isEqual($scope.lastGasLimit, data.gasLimit) && data.gasLimit.length >= MAX_BINS)
 					$scope.lastGasLimit = data.gasLimit;
-
 				if (!_.isEqual($scope.lastBlocksTime, data.blocktime) && data.blocktime.length >= MAX_BINS)
 					$scope.lastBlocksTime = data.blocktime;
 
