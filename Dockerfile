@@ -8,14 +8,16 @@ WORKDIR /usr/src/app
 # where available (npm@5+)
 COPY package*.json ./
 
-# RUN npm install
+RUN npm install
 # If you ./are building your code for production
 RUN npm ci --only=production
 
-RUN ./node_modules/grunt_cli/bin/grunt
+# RUN ./node_modules/grunt_cli/bin/grunt
 # Bundle app source
 COPY . .
 
-EXPOSE 3000
-CMD [ "npm", "start" ]
+RUN npm run dist
+
+# EXPOSE 3000
+# CMD [ "npm", "start" ]
 
