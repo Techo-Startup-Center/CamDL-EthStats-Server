@@ -23,6 +23,7 @@ pipeline{
     post {
         always {
             cleanWs()
+            sh "docker image rm -f registry.camdx.gov.kh/camdl/ethstat-server:v1.0.$BUILD_NUMBER"
         }
     }
 }
