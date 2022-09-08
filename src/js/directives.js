@@ -6,7 +6,7 @@ angular.module('netStatsApp.directives', [])
 		return function(scope, elm, attrs) {
 			elm.text(version);
 		};
-}])
+	}])
 // 	.directive('timeAgo', ['$interval', function($interval) {
 // 		function link (scope, element, attrs)
 // 		{

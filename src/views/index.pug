@@ -2,11 +2,12 @@
 extends ./layout.pug
 block nav
   nav(style="padding-top:1rem; padding-left:1rem; text-align:center;")
+
           a(href="#" style="text-decoration: none; color:white;") 
-            img.img-responsive(width="450", src="camdl_logo.png", style="display:inline-block;")
+            img.img-responsive(width="450", ng-src="{{$root.logo}}", style="display:inline-block;")
             //- span.text-light(style="font-size:32px;font-weight:bold; font-family:'Exo'; ") {{$root.pageTitle}} 
-          //- i.icon-laptop(style="font-size:2.5rem;")   
-         
+          //- i.icon-laptop(style="font-size:2.5rem;")
+
            
               
 block content

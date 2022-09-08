@@ -1,4 +1,5 @@
 var scripts = [
+	// 'src/js/env.js',
 	'src/js/app.js',
 	'src/js/controllers.js',
 	'src/js/filters.js',
